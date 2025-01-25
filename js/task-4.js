@@ -161,50 +161,252 @@
 // calculateTotalPrice([164, 48, 291]);
 // calculateTotalPrice([]);
 
-function slugify(title) {
-    const slug = title.toLowerCase().split(" ").join("-");
-    return slug;
-}
+// function slugify(title) {
+//     const slug = title.toLowerCase().split(" ").join("-");
+//     return slug;
+// }
 
-console.log(slugify("Arrays for beginners")); // "arrays-for-beginners"
-console.log(slugify("English for developer")); // "english-for-developer"
-console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
-console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
+// console.log(slugify("Arrays for beginners")); // "arrays-for-beginners"
+// console.log(slugify("English for developer")); // "english-for-developer"
+// console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
+// console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
 
 
 
-function makeArray(firstArray, secondArray, maxLength) {
-    const newArray = firstArray.concat(secondArray);
-    if (newArray.length > maxLength) {
-       return newArray.slice(0, maxLength);
+// function makeArray(firstArray, secondArray, maxLength) {
+//     const newArray = firstArray.concat(secondArray);
+//     if (newArray.length > maxLength) {
+//        return newArray.slice(0, maxLength);
+//     }
+//     return newArray;
+// }
+
+// console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
+// console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
+// console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
+
+
+// function filterArray(numbers, value) {
+//     const newArray = [];
+
+//     for (const result of numbers) {
+//         if (result > value) {
+//             newArray.push(result);
+//         }
+//     }
+//     return newArray;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+
+// for (const result of colors) {
+//     hexColors.push(result.hex);
+//     rgbColors.push(result.rgb);
+// }
+// console.log(hexColors);
+// console.log(rgbColors);
+
+// function getProductPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   for (const result of products) {
+//     if (result.name === productName) {
+//       console.log(result.price);
+//     }
+//   }
+// }
+// getProductPrice("Radar"); // повертає 1300.
+// getProductPrice("Grip"); // повертає 1200.
+// getProductPrice("Scanner"); // повертає 2700.
+// getProductPrice("Droid"); // повертає 400.
+// getProductPrice("Engine"); // повертає null.
+
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+
+//   const name = [];
+//   const price = [];
+//   const quantity = [];
+
+//     for (const item of products) {
+//            name.push(item.name);
+//            price.push(item.price);
+//            quantity.push(item.quantity);
+//     }
+//     if (propName === "name") {
+//         console.log(name);
+//     }
+//     else if (propName === "price") {
+//         console.log(price);
+//     }
+//     else if (propName === "quantity") {
+//         console.log(quantity);
+//     }
+//     else {console.log([]);}
+    
+// }
+// getAllPropValues("name"); // повертає ["Radar", "Scanner", "Droid", "Grip"]
+// getAllPropValues("quantity"); // повертає [4, 3, 7, 9]
+// getAllPropValues("price"); // повертає [1300, 2700, 400, 1200]
+// getAllPropValues("category"); // повертає []
+
+
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+
+//     for (const item of products) {
+//          if (item.name === productName) {
+//       return item.price * item.quantity;
+//     }
+//   }
+//     return `"Product ${productName} not found!"`; 
+    
+//     // console.log(key);
+    
+// }
+
+// console.log(calculateTotalPrice("Blaster"));  // повертає "Product Blaster not found!"
+// console.log(calculateTotalPrice("Droid"));  // повертає 2800
+// console.log(calculateTotalPrice("Radar"));  // повертає 5200
+// console.log(calculateTotalPrice("Grip"));  // повертає 10800
+// console.log(calculateTotalPrice("Scanner"));  // повертає 8100
+
+// function getExtremeScores(scores) {
+   
+//  return `{ best: ${Math.max(...scores)}, worst: ${Math.min(...scores)} }`;
+// }
+
+// console.log(getExtremeScores([89, 64, 42, 17, 93, 51, 26])); // повертає об'єкт { best: 93, worst: 17 }
+// console.log(getExtremeScores([19, 7, 4, 17, 81, 24]));
+
+// function getExtremeScores(scores) {
+// const bestScore = Math.max(...scores);
+// const worstScore = Math.min(...scores);
+//  return `{ best: ${Math.max(...bestScore)}, worst: ${Math.min(...worstScore)} }`;
+//  console.log(bestScore);
+// }
+// console.log(getExtremeScores([19, 7, 4, 17, 81, 24]));
+
+function isEnoughCapacity(products, containerSize) {
+    let count = 0;
+
+    for (const key in products) {
+        count += products[key];
     }
-    return newArray;
-}
-
-console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
-console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
-console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
-
-
-function filterArray(numbers, value) {
-    const newArray = [];
-
-    for (const result of numbers) {
-        if (result > value) {
-            newArray.push(result);
-        }
+    if (count <= containerSize) {
+        return true;
     }
-    return newArray;
+    else { return false; }
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+console.log(
+  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+); // true
+
+console.log(
+  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+); // false
+
+console.log(
+  isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+); // true
+
+console.log(
+  isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+); // false
 
 
+function calcAverageCalories(days) {
+    let total = 0;
 
+    for (const day of days) {
+        total += day.calories;
+    }
+    if (total > 0) {
+        return total / days.length;
+    }
+    else { return 0 };
+}
+
+console.log(
+  calcAverageCalories([
+    { day: "monday", calories: 3010 },
+    { day: "tuesday", calories: 3200 },
+    { day: "wednesday", calories: 3120 },
+    { day: "thursday", calories: 2900 },
+    { day: "friday", calories: 3450 },
+    { day: "saturday", calories: 3280 },
+    { day: "sunday", calories: 3300 }
+  ])
+); // 3180
+
+console.log(
+  calcAverageCalories([
+    { day: "monday", calories: 2040 },
+    { day: "tuesday", calories: 2270 },
+    { day: "wednesday", calories: 2420 },
+    { day: "thursday", calories: 1900 },
+    { day: "friday", calories: 2370 },
+    { day: "saturday", calories: 2280 },
+    { day: "sunday", calories: 2610 }
+  ])
+); // 2270
+
+console.log(
+  calcAverageCalories([])
+); // 0
+
+
+const profile = {
+    username: "Jacob",
+    playTime: 300,
+    changeUsername(newName) {
+        this.username = newName;
+    },
+    updatePlayTime(hours) {
+        this.playTime += hours;
+
+    },
+    getInfo() {
+        return `${this.username} has ${this.playTime} active hours!`
+    },
+};
+
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+profile.changeUsername("Marco");
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
