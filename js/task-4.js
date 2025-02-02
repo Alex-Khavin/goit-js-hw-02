@@ -318,95 +318,499 @@
 // }
 // console.log(getExtremeScores([19, 7, 4, 17, 81, 24]));
 
-function isEnoughCapacity(products, containerSize) {
-    let count = 0;
+// function isEnoughCapacity(products, containerSize) {
+//     let count = 0;
 
-    for (const key in products) {
-        count += products[key];
-    }
-    if (count <= containerSize) {
-        return true;
-    }
-    else { return false; }
-}
+//     for (const key in products) {
+//         count += products[key];
+//     }
+//     if (count <= containerSize) {
+//         return true;
+//     }
+//     else { return false; }
+// }
 
-console.log(
-  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-); // true
+// console.log(
+//   isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+// ); // true
 
-console.log(
-  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-); // false
+// console.log(
+//   isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+// ); // false
 
-console.log(
-  isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
-); // true
+// console.log(
+//   isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+// ); // true
 
-console.log(
-  isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
-); // false
-
-
-function calcAverageCalories(days) {
-    let total = 0;
-
-    for (const day of days) {
-        total += day.calories;
-    }
-    if (total > 0) {
-        return total / days.length;
-    }
-    else { return 0 };
-}
-
-console.log(
-  calcAverageCalories([
-    { day: "monday", calories: 3010 },
-    { day: "tuesday", calories: 3200 },
-    { day: "wednesday", calories: 3120 },
-    { day: "thursday", calories: 2900 },
-    { day: "friday", calories: 3450 },
-    { day: "saturday", calories: 3280 },
-    { day: "sunday", calories: 3300 }
-  ])
-); // 3180
-
-console.log(
-  calcAverageCalories([
-    { day: "monday", calories: 2040 },
-    { day: "tuesday", calories: 2270 },
-    { day: "wednesday", calories: 2420 },
-    { day: "thursday", calories: 1900 },
-    { day: "friday", calories: 2370 },
-    { day: "saturday", calories: 2280 },
-    { day: "sunday", calories: 2610 }
-  ])
-); // 2270
-
-console.log(
-  calcAverageCalories([])
-); // 0
+// console.log(
+//   isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+// ); // false
 
 
-const profile = {
-    username: "Jacob",
-    playTime: 300,
-    changeUsername(newName) {
-        this.username = newName;
-    },
-    updatePlayTime(hours) {
-        this.playTime += hours;
+// function calcAverageCalories(days) {
+//     let total = 0;
 
-    },
-    getInfo() {
-        return `${this.username} has ${this.playTime} active hours!`
-    },
+//     for (const day of days) {
+//         total += day.calories;
+//     }
+//     if (total > 0) {
+//         return total / days.length;
+//     }
+//     else { return 0 };
+// }
+
+// console.log(
+//   calcAverageCalories([
+//     { day: "monday", calories: 3010 },
+//     { day: "tuesday", calories: 3200 },
+//     { day: "wednesday", calories: 3120 },
+//     { day: "thursday", calories: 2900 },
+//     { day: "friday", calories: 3450 },
+//     { day: "saturday", calories: 3280 },
+//     { day: "sunday", calories: 3300 }
+//   ])
+// ); // 3180
+
+// console.log(
+//   calcAverageCalories([
+//     { day: "monday", calories: 2040 },
+//     { day: "tuesday", calories: 2270 },
+//     { day: "wednesday", calories: 2420 },
+//     { day: "thursday", calories: 1900 },
+//     { day: "friday", calories: 2370 },
+//     { day: "saturday", calories: 2280 },
+//     { day: "sunday", calories: 2610 }
+//   ])
+// ); // 2270
+
+// console.log(
+//   calcAverageCalories([])
+// ); // 0
+
+
+// const profile = {
+//     username: "Jacob",
+//     playTime: 300,
+//     changeUsername(newName) {
+//         this.username = newName;
+//     },
+//     updatePlayTime(hours) {
+//         this.playTime += hours;
+
+//     },
+//     getInfo() {
+//         return `${this.username} has ${this.playTime} active hours!`
+//     },
+// };
+
+// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+// profile.changeUsername("Marco");
+// console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+// profile.updatePlayTime(20);
+// console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+// function changeEven(numbers, value) {
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       numbers[i] = numbers[i] + value;
+//     }
+//   }
+//   return numbers;
+// }
+
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10)); // повертає [12, 18, 3, 7, 14, 16]
+// console.log(changeEven([1, 2, 3, 4, 5], 10)); // повертає [1, 12, 3, 14, 5]
+// console.log(changeEven([17, 24, 68, 31, 42], 100)); // повертає [17, 124, 168, 31, 142]
+// console.log(changeEven([44, 13, 81, 92, 36, 54], 100)); // повертає [144, 13, 81, 192, 136, 154]
+
+// const changeEven = (numbers, value) => {
+//   const newArray = [];
+
+//   numbers.forEach(element => {
+//     if (element % 2 === 0) {
+//       newArray.push(element + value);
+//     }
+//     else {newArray.push(element)}
+//   });
+// return newArray;
+// }
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10)); // повертає [12, 18, 3, 7, 14, 16]
+
+
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((acc, gamer) => {return acc + gamer.playtime / gamer.gamesPlayed}, 0);
+// console.log(totalAveragePlaytimePerGame) // Відповідь 1023
+
+
+
+
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+];
+
+const newArray = users.reduce((acc, user) => {return acc + user.balance }, 0);
+// console.log("newArray:", newArray)
+
+const calculateTotalBalance = (users) => {
+  return users.reduce((value, count) => {
+    return value + count.balance
+  }, 0);
 };
 
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
 
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+//   .filter(rank => rank.rating > MIN_BOOK_RATING)
+//   .map(book => book.author)
+//   .toSorted((a, b) => a.localeCompare(b));
+
+// const students = [
+//   { name: "Mango", score: 83, courses: ["mathematics", "physics"] },
+//   { name: "Poly", score: 59, courses: ["science", "mathematics"] },
+//   { name: "Ajax", score: 37, courses: ["physics", "biology"] },
+//   { name: "Kiwi", score: 94, courses: ["literature", "science"] },
+// ];
+// const uniqueSortedCourses = students
+//   const newArray = students.flatMap(student => student.courses)
+// console.log("newArray:", newArray)
+//   const new2Array = newArray.filter((course, index, array) => array.indexOf(course) === index);
+//   console.log("new2Array:", new2Array)
+
+//_______________________________________________________________________
+//Task-1_hw-05
+const getUserNames = (users) => {return users.map(user => user.name)};
+
+
+  console.log(
+  getUserNames([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    balance: 2811
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    balance: 3821
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    balance: 3793
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    balance: 2278
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    balance: 3951
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    balance: 1498
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    balance: 2764
+  },
+])
+); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+
+//_______________________________________________________________________
+//Task-2_hw-05
+const getUsersWithFriend = (users, friendName) => {
+  return users.filter(user => user.friends.includes(friendName));
+ };
+
+const allUsers = [
+  {
+    name: "Moore Hensley",
+    friends: ["Sharron Pace"]
+  },
+  {
+    name: "Sharlene Bush",
+    friends: ["Briana Decker", "Sharron Pace"]
+  },
+  {
+    name: "Ross Vazquez",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"]
+  },
+  {
+    name: "Elma Head",
+    friends: ["Goldie Gentry", "Aisha Tran"]
+  },
+  {
+    name: "Carey Barr",
+    friends: ["Jordan Sampson", "Eddie Strong"]
+  },
+  {
+    name: "Blackburn Dotson",
+    friends: ["Jacklyn Lucas", "Linda Chapman"]
+  },
+  {
+    name: "Sheree Anthony",
+    friends: ["Goldie Gentry", "Briana Decker"]
+  }
+];
+
+console.log(getUsersWithFriend(allUsers, "Briana Decker")); 
+// [
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"]
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"]
+//   }
+// ]
+
+console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
+// [
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"]
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"]
+//   }
+// ]
+
+console.log(getUsersWithFriend(allUsers, "Adrian Cross" )); // []
+
+//_______________________________________________________________________
+//Task-3_hw-05
+const sortByDescendingFriendCount = (users) => {
+  return users.toSorted((a, b) => b.friends.length - a.friends.length);
+ };
+
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male"
+    },
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female"
+    },
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female"
+    }
+  ])
+);
+// [
+//   {
+//     name: "Ross Vazquez",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Moore Hensley",
+//     friends: ["Sharron Pace"],
+//     gender: "male"
+//   }
+// ]
+
+//_______________________________________________________________________
+//Task-4_hw-05
+const getTotalBalanceByGender = (users, gender) => {
+  return users
+    .filter(el => el.gender === gender)
+    .reduce((acc, el) => {return acc + el.balance }, 0);
+ };
+
+const clients = [
+	{
+    name: "Moore Hensley",
+    gender: "male",
+    balance: 2811
+  },
+  {
+    name: "Sharlene Bush",
+    gender: "female",
+    balance: 3821
+  },
+  {
+    name: "Ross Vazquez",
+    gender: "male",
+    balance: 3793
+  },
+  {
+    name: "Elma Head",
+    gender: "female",
+    balance: 2278
+  },
+  {
+    name: "Carey Barr",
+    gender: "male",
+    balance: 3951
+  },
+  {
+    name: "Blackburn Dotson",
+    gender: "male",
+    balance: 1498
+  },
+  {
+    name: "Sheree Anthony",
+    gender: "female",
+    balance: 2764
+  }
+];
+
+console.log(getTotalBalanceByGender(clients, "male")); // 12053
+
+console.log(getTotalBalanceByGender(clients, "female")); // 8863
+
+
