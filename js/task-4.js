@@ -947,9 +947,9 @@ class Storage {
   addItem(newItem) {
     this.#items.push(newItem);
   }
-  // removeItem(itemToRemove) {
-  //   this.#items.
-  // }
+  removeItem(itemToRemove) {
+    this.#items = this.#items.filter(el => el !== itemToRemove)
+  }
 };
 
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
@@ -963,3 +963,34 @@ console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 storage.removeItem("Scaner");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+//Task-3_______________________________________________________________________________
+class StringBuilder {
+  #value;
+
+  constructor(initialValue) {
+    this.#value = initialValue;
+  }
+  getValue() {
+    return this.#value;
+  }
+  padEnd(str) {
+    this.#value += str;
+  }
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+  padBoth(str) {
+    this.#value = `${str}${this.#value}${str}`;
+  }
+}
+
+const builder = new StringBuilder(".");
+
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
